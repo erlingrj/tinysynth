@@ -5,6 +5,8 @@ trait TinySynthConfig {
   def numSynths = 1
   def clockPeriodNs = 20
   // PWM options
+  // FIXME: What is the relationship between the next two.
+  //  we should only have one and the other should be derived.
   def pwmOutputBits = 8
   def pwmCyclesPerPeriod = 50
 

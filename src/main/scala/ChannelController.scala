@@ -22,5 +22,5 @@ class ChannelController(cfg: TinySynthConfig) extends Module {
 
   io.oscillatorSelector := OscillatorType.SquareWave
   io.period := freqToPeriod(440).U // Just output an A for now
-  io.volume := 2^(cfg.volumeBits-1).U // Set to half volume
+  io.volume := 128.U // Set to half volume
 }

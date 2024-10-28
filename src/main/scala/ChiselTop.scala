@@ -12,7 +12,11 @@ class ChiselTop() extends Module {
   })
 
   val tinySynth = Module(new TinySynth(DefaultConfig))
-  tinySynth.io <> io
+  io.uo_out := tinySynth.io.pwmOut.asUInt
+
+  // Drive to-be-implemented signals to 0
+  io.uio_out := 0.U
+  io.uio_oe := 0.U
 }
 
 object ChiselTop extends App {

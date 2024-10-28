@@ -34,7 +34,7 @@ class SquareWaveOscillator(cfg: TinySynthConfig) extends Module {
   val halfPeriod = (io.period >> 1).asUInt
   io.wave := cnt < halfPeriod
 
-  cnt := cnt + 1
+  cnt := cnt + 1.U
   when (cnt === (io.period - 1.U)) {
     cnt := 0.U
   }
