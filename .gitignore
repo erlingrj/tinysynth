@@ -14,3 +14,6 @@ src/ChiselTop.anno.json
 src/ChiselTop.fir
 src/ChiselTop.v
 target/
+test_run_dir/
+.metals/
+.bsp/
