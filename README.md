@@ -52,6 +52,9 @@ The GitHub action will automatically build the ASIC files using [OpenLane](https
 ## TODO:
 - [ ] Implement proper merging of several oscillators
 - [ ] Implement a volume knob?
+- [ ] Gate level simulation
 - [ ] Get more unit tests up and running
 - [ ] Get design onto FPGA
 - [ ] Be careful about FPGA vs ASIC differences (explicit reset etc)
+- [ ] Document external HW requirements
+- [ ] Pinout

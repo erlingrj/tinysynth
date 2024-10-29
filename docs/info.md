@@ -9,12 +9,12 @@ You can also include images in this folder and reference them in the markdown. E
 
 ## How it works
 
-This is a Chisel template
+This is a three-channel square wave synthesizer. It outputs the audio wave as a PWM signal on a pin. It accepts 2 PWM inputs per channel to control frequency and volume.
 
 ## How to test
 
-Currently we use cocotb, this shall change to ChiselTest
+The design is tested with ChiselTest.
 
 ## External hardware
 
-non by default
+A breadboard with potentiometer and also a poor-man's ADC is needed. 
