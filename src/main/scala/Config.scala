@@ -1,8 +1,8 @@
 package tinysynth
 import chisel3._
 
-trait TinySynthConfig {
-  def numSynths = 1
+trait TinySynthConfig{
+  def numSynths = 3
   def clockPeriodNs = 20
   // PWM options
   // FIXME: What is the relationship between the next two.

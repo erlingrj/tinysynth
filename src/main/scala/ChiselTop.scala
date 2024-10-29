@@ -11,6 +11,7 @@ class ChiselTop() extends Module {
     val ena = Input(Bool())           // will go high when the design is enabled
   })
 
+  val cfg = DefaultConfig
   val tinySynth = Module(new TinySynth(DefaultConfig))
   // Forward TinySynth outputs
   io.uo_out := VecInit(Seq(tinySynth.io.pwmOut) ++ tinySynth.io.adcOut).asUInt
