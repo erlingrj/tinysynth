@@ -17,6 +17,8 @@ trait TinySynthConfig {
   def numNotes = 128
   def oscPeriodBits = 32
 
+  // Input ADC
+  def adcNumPipelineRegs = 2
 
   // UI options
   def volumeBits = 8

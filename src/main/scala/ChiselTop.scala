@@ -12,11 +12,19 @@ class ChiselTop() extends Module {
   })
 
   val tinySynth = Module(new TinySynth(DefaultConfig))
-  io.uo_out := tinySynth.io.pwmOut.asUInt
+  // Forward TinySynth outputs
+  io.uo_out := VecInit(tinySynth.io.pwmOut ++ tinySynth.io.adcOut).asUInt
 
-  // Drive to-be-implemented signals to 0
+  // Forward to TinySynths inputs
+  for ((tinyIO, i) <- tinySynth.io.adcIn.zipWithIndex) {
+    tinyIO := io.ui_in(i)
+  }
+
+  // Drive currently unused signals to 0
   io.uio_out := 0.U
   io.uio_oe := 0.U
+
+  // FIXME: What about the enable signal? Should it control the reset?
 }
 
 object ChiselTop extends App {
