@@ -1,9 +1,9 @@
 # Tiny Tapeout project information
 project:
-  title:        "Chisel Template - please change"      # Project title
-  author:       "Martin Schoeberl - please change"      # Your name
+  title:        "TinySynth"      # Project title
+  author:       "Erling Rennemo Jellum"      # Your name
   discord:      ""      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
-  description:  "A Chisel Template for a Tiny Tapeout design. Change to your design."      # One line description of what your project does
+  description:  "A multi-channel audio synthesizer"      # One line description of what your project does
   language:     "Chisel" # other examples include SystemVerilog, Amaranth, VHDL, etc
   clock_hz:     50000000       # Clock frequency in Hz (or 0 if not applicable)
 
@@ -12,7 +12,7 @@ project:
 
   # Your top module name must start with "tt_um_". Change the example and make it unique by including your github username.
   # tt_um_example will fail as name on submission. Change to something unique.
-  top_module:  "tt_um_example"
+  top_module:  "tt_um_tinysynth"
   
   # List your project's source files here. Source files must be in ./src and you must list each source file separately, one per line.
   # For Chisel designs this is easy, as there is only one Verilg file to list, which contains all the Chisel generated Verilog.
