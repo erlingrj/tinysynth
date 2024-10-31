@@ -14,12 +14,10 @@ class ChiselTop() extends Module {
   val cfg = DefaultConfig
   val tinySynth = Module(new TinySynth(DefaultConfig))
   // Forward TinySynth outputs
-  io.uo_out := VecInit(Seq(tinySynth.io.pwmOut) ++ tinySynth.io.adcOut).asUInt
+  io.uo_out := tinySynth.io.pwmOut.asUInt
 
   // Forward to TinySynths inputs
-  for ((tinyIO, i) <- tinySynth.io.adcIn.zipWithIndex) {
-    tinyIO := io.ui_in(i)
-  }
+  tinySynth.io.uartIn := io.ui_in(0)
 
   // Drive currently unused signals to 0
   io.uio_out := 0.U

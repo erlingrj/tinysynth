@@ -2,8 +2,9 @@ package tinysynth
 import chisel3._
 
 trait TinySynthConfig{
-  def numSynths = 3
+  def numSynths = 2
   def clockPeriodNs = 20
+  def clockFrequency = 1000000000/(clockPeriodNs)
   // PWM options
   // FIXME: What is the relationship between the next two.
   //  we should only have one and the other should be derived.
@@ -17,12 +18,12 @@ trait TinySynthConfig{
   def numNotes = 128
   def oscPeriodBits = 32
 
-  // Input ADC
-  def adcNumPipelineRegs = 2
-
   // UI options
   def volumeBits = 8
   def uiKnobInputBits = pwmOutputBits
+
+  def uartBaudRate = 115200
+  def numCyclesPerBit = clockFrequency/uartBaudRate
 
   // Convenience functions
   def numOscillatorTypes= {
