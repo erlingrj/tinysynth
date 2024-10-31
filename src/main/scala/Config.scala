@@ -2,7 +2,7 @@ package tinysynth
 import chisel3._
 
 trait TinySynthConfig{
-  def numSynths = 2
+  def numSynths = 1
   def clockPeriodNs = 20
   def clockFrequency = 1000000000/(clockPeriodNs)
   // PWM options
